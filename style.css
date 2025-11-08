@@ -6,10 +6,10 @@ body {
     padding: 0; 
 }
 
-/* 헤더 스타일 */
+/* 헤더 스타일 (색상: #D9EAFD 적용) */
 header { 
     padding: 15px; 
-    background-color: #D9EAFD; 
+    background-color: #D9EAFD;
     color: #333; 
     border-bottom: 1px solid #c0d9e9;
 }
@@ -35,7 +35,7 @@ button {
 #main-mission-screen {
     display: flex; 
     flex-direction: column; 
-    align-items: center; 
+    align-items: center; /* 버튼, 리스트, 리워드 섹션 전체를 가로축 중앙 정렬 */
     width: 100%;
 }
 
@@ -46,6 +46,7 @@ button {
     text-align: center; 
 }
 
+/* 바우처 이미지 중앙 정렬 및 크기 (HTML 인라인 스타일과 함께 작동) */
 #reward-section img {
     display: block; 
     margin: 10px auto; 
@@ -70,10 +71,17 @@ button {
     border-radius: 10px;
     width: 90%;
     max-width: 450px; 
-    /* 모달 콘텐츠 내부의 모든 요소를 중앙 정렬 */
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center; /* 모달 내부 모든 요소를 중앙 정렬 */
+}
+
+/* Step 2 퀴즈 컨테이너에 Flexbox 적용 */
+#step-2 {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* ⭐ Flexbox로 모든 자식 요소 중앙 정렬 ⭐ */
+    width: 100%;
 }
 
 /* 미션 설명/퀴즈 텍스트 스타일 */
@@ -86,7 +94,7 @@ button {
     text-align: center;
 }
 
-/* --- 퀴즈 입력 필드 완벽 중앙 정렬 (Step 2) --- */
+/* --- 퀴즈 입력 필드 완벽 중앙 정렬 --- */
 #quiz-answer-input {
     padding: 10px; 
     width: 80%; /* 컨테이너 너비의 80% 차지 */
@@ -95,12 +103,9 @@ button {
     text-align: center;
     font-size: 1.1em;
     
-    /* ⭐핵심 수정: 블록 요소로 만들고 좌우 margin을 auto로 설정하여 중앙 정렬⭐ */
-    display: block !important; 
-    margin: 10px auto; 
+    /* Flexbox 부모 (#step-2)의 align-items: center 속성이 중앙 정렬을 처리합니다. */
+    margin: 10px 0; 
 }
-/* ------------------------------------ */
-
 
 /* --- 카메라 피드 스타일 (Step 4) --- */
 #camera-preview {
